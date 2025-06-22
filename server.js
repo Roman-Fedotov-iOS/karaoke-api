@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 app.get('/api/songs', (req, res) => {
-  const baseUrl = req.protocol + '://' + req.get('host');
+  const baseUrl = 'https://' + req.get('host');
   const updatedSongs = songs.map(song => ({
     ...song,
     url: `${baseUrl}${song.url}`
